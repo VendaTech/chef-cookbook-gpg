@@ -7,4 +7,8 @@
 # All rights reserved - Do Not Redistribute
 #
 
-chef_gem 'gpgme'
+chef_gem 'gpgme' do
+  action :nothing
+end.run_action(:upgrade)
+
+require 'gpgme'
