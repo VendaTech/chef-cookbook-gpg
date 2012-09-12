@@ -9,6 +9,6 @@
 
 chef_gem 'gpgme' do
   action :nothing
-end.run_action(:upgrade)
+end.run_action(:install)
 
 require 'gpgme'
