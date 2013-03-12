@@ -1,3 +1,4 @@
+name             "vt-gpg"
 maintainer       "Venda Ltd"
 maintainer_email "candrews@venda.com"
 license          "Apache"
