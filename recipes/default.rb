@@ -14,7 +14,7 @@ end.run_action(:install)
 require 'etc'
 require 'systemu' # need to supply stdin, but Mixlib::ShellOut can't.
 
-include_recipe "gpg::library"
+include_recipe "vt-gpg::library"
 
 package "gnupg" do
   action :nothing
@@ -39,7 +39,7 @@ search(node[:gpg][:keys_data_bag]) do |key|
     2 => stderr = ''
   )
   if status != 0
-    Chef::Log.error("gpg: #{stdout} #{stderr}")
+    Chef::Log.error("vt-gpg: #{stdout} #{stderr}")
   end
 
   # Mark it as ultimately trusted:
@@ -51,7 +51,7 @@ search(node[:gpg][:keys_data_bag]) do |key|
     2 => stderr = ''
   )
   if status != 0
-    Chef::Log.error("gpg: #{stdout} #{stderr}")
+    Chef::Log.error("vt-gpg: #{stdout} #{stderr}")
   end
 
 end
